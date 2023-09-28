@@ -4,7 +4,7 @@ import subprocess
 
 print("From python file in git")
 print('Hello world', file=sys.stderr)
-print("files": os.listdir("/user/home"))
+print("files:", os.listdir("/user/home"))
 with open("/user/home/main.py", "r") as file:
     for line in file:
         print(line.rstrip())
