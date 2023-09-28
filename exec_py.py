@@ -8,7 +8,10 @@ print("files:", os.listdir("/user/home"))
 with open("/user/home/main.py", "r") as file:
     for line in file:
         print(line.rstrip())
-os.system("python /user/home/main.py")
+
+proc = subprocess.run(["python", "/user/home/main.py"], capture_output=True, shell=True)
+print("Script output:", proc.stdout)
+print("Script error:", proc.stderr)
 print("Python script from docker executed")
 
 proc = subprocess.run(["dbt", "--version"], capture_output=True, shell=True)
